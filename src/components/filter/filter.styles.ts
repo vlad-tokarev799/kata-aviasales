@@ -12,16 +12,17 @@ export const StyledFilter = styled.label<FilterStyles>`
   gap: 10px;
   padding: 10px 20px;
   user-select: none;
+  cursor: pointer;
 
   &:hover {
-    background: #f1fcff;
+    background: ${({ theme }) => theme.interactive};
   }
 
   input {
     width: 20px;
     height: 20px;
     box-sizing: border-box;
-    border: 1px solid #9abbce;
+    border: 1px solid ${({ theme }) => theme.borderColor};
     border-radius: 2px;
     appearance: none;
     margin: 0;
@@ -30,7 +31,7 @@ export const StyledFilter = styled.label<FilterStyles>`
       background-image: url(${check});
       background-repeat: no-repeat;
       background-position: center center;
-      border-color: rgba(33, 150, 243, 1);
+      border-color: ${({ theme }) => theme.mainAccent};
     }
   }
 `;

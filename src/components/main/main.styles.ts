@@ -7,7 +7,7 @@ export type MainStylesType = {
 export const StyledMain = styled.main<MainStylesType>``;
 
 export const StyledShowMoreButton = styled.button<MainStylesType>`
-  background: #2196f3;
+  background: ${({ theme }) => theme.mainAccent};
   border-radius: 5px;
 
   font-style: normal;
@@ -18,7 +18,7 @@ export const StyledShowMoreButton = styled.button<MainStylesType>`
   letter-spacing: 0.5px;
   text-transform: uppercase;
 
-  color: #ffffff;
+  color: ${({ theme }) => theme.mainLight};
 
   padding: 15px 20px;
   width: 100%;
@@ -26,4 +26,12 @@ export const StyledShowMoreButton = styled.button<MainStylesType>`
   border: none;
 
   margin-top: 20px;
+
+  flex-grow: 1;
+
+  cursor: pointer;
+`;
+
+export const StyledMainTitle = styled.h2<MainStylesType>`
+  text-align: center;
 `;

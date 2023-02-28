@@ -7,8 +7,8 @@ export type TabStyles = {
 export const StyledTab = styled.button<TabStyles>`
   padding: 15px;
   box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #dfe5ec;
+  background: ${({ theme }) => theme.mainLight};
+  border: 1px solid ${({ theme }) => theme.outline};
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -17,23 +17,26 @@ export const StyledTab = styled.button<TabStyles>`
   letter-spacing: 0.5px;
   text-transform: uppercase;
 
-  color: #4a4a4a;
+  color: ${({ theme }) => theme.textColor};
+
+  cursor: pointer;
 
   &:hover {
-    background: #f1fcff;
+    background: ${({ theme }) => theme.secondLight};
   }
 
-  ${({ active }) =>
+  ${({ active, theme }) =>
     active &&
     `
-    background: #2196F3;
+    background: ${theme.mainAccent};
     border-color: transparent;
-    color: #fff;
+    color: ${theme.mainLight};
+    cursor: default;
 
     &:hover {
-      background: #2196F3;
+      background: ${theme.mainAccent};
       border-color: transparent;
-      color: #fff;
+      color: ${theme.mainLight};
     }
   `}
 
@@ -45,3 +48,7 @@ export const StyledTab = styled.button<TabStyles>`
     border-radius: 0 5px 5px 0;
   }
 `;
+
+StyledTab.defaultProps = {
+  active: false,
+};

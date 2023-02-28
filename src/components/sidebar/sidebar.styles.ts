@@ -5,7 +5,7 @@ export type SidebarStyles = {
 };
 
 export const StyledSidebar = styled.aside<SidebarStyles>`
-  background: #ffffff;
+  background: ${({ theme }) => theme.mainLight};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 8px 0;
@@ -20,7 +20,7 @@ export const StyledSidebar = styled.aside<SidebarStyles>`
     letter-spacing: 0.5px;
     text-transform: uppercase;
 
-    color: #4a4a4a;
+    color: ${({ theme }) => theme.textColor};
 
     margin: 10px 0;
     padding: 0 20px;

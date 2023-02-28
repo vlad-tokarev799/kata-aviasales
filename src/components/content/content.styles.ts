@@ -5,7 +5,8 @@ export type Styles = {
 };
 
 export const StyledContent = styled.div<Styles>`
-  display: flex;
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  align-items: start;
   gap: 20px;
-  align-items: flex-start;
 `;
