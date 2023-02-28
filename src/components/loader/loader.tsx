@@ -6,8 +6,6 @@ type Props = LoaderStyles;
 export const Loader = (props: Props) => {
   const { ...otherProps } = props;
 
-  console.log(otherProps);
-
   return (
     <StyledLoader {...otherProps}>
       <div className="loadingio-spinner-rolling-qnd2539qjyi">
